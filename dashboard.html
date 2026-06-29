@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Vault Dashboard</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{display:flex;background:#081321;color:#fff}
+.sidebar{width:240px;height:100vh;background:#0f172a;padding:20px;position:fixed}
+.logo{font-size:24px;font-weight:bold;color:#60a5fa;margin-bottom:20px}
+.sidebar a{display:block;color:#fff;text-decoration:none;padding:12px;border-radius:8px;margin:8px 0}
+.sidebar a:hover{background:#2563eb}
+.main{margin-left:240px;padding:30px;width:100%}
+.top{display:flex;justify-content:space-between;align-items:center}
+.avatar{width:48px;height:48px;border-radius:50%;background:#2563eb;display:flex;align-items:center;justify-content:center;font-weight:bold}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:25px}
+.card{background:#111c33;padding:20px;border-radius:14px}
+.big{font-size:34px;color:#4ade80}
+.muted{color:#b6c2d1}
+.notice{background:#1e3a8a;padding:10px;border-radius:8px;margin-top:10px}
+ul{padding-left:18px}
+</style>
+</head>
+<body>
+<div class="sidebar">
+<div class="logo">🔐 Digital Vault</div>
+<a href="dashboard.html">🏠 Dashboard</a>
+<a href="dashboard.html">📁 My Vault</a>
+<a href="dashboard.html">💰 Secure Account Details</a>
+<a href="dashboard.html">⚙ Settings</a>
+<a href="#" onclick="logout()">🚪 Logout</a>
+</div>
+
+<div class="main">
+<div class="top">
+<div>
+<h1>Welcome Back, <span id="Maximus">Maximus</span></h1>
+</div>
+<div class="avatar" id="avatar">MA</div>
+</div>
+
+<div class="grid">
+<div class="card"><div class="muted">Total Money Saved</div><div class="big" id="money">$15,000</div></div>
+<div class="card"><h3>Vault Status</h3><div class="notice">AES-256 Encryption Active</div></div>
+<div class="card"><h3>Agent Details</h3><p>Alexander </p></div>
+<div class="card"><h3>Security Score</h3><div class="big">100/100</div></div>
+<div class="card"><h3>Recent Activity</h3><ul><li>Vault unlocked</li><li>Backup verified</li><li>Security scan complete</li></ul></div>
+<div class="card"><h3>Quick Stats</h3><p>Files:128</p><p>Notes:34</p><p>Passwords:52</p></div>
+</div>
+</div>
+
+<script>
+const n=localStorage.getItem("customerName")||"Customer";
+const e=localStorage.getItem("customerEmail")||"customer@example.com";
+document.getElementById("customerName").textContent=n;
+document.getElementById("customerEmail").textContent=e;
+document.getElementById("avatar").textContent=n.split(" ").map(x=>x[0]).join("").toUpperCase();
+let total=125430,current=0,m=document.getElementById("money");
+let t=setInterval(()=>{current+=Math.ceil((total-current)/12);if(current>=total){current=total;clearInterval(t);}m.textContent="₹"+current.toLocaleString("en-IN");},30);
+function logout(){localStorage.clear();window.location.href="index.html";}
+</script>
+</body>
+</html>
