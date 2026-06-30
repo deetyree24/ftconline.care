@@ -115,7 +115,9 @@ button:hover{
 <div class="logo">🔐 Digital Vault</div>
 
 <a href="dashboard.html">🏠 Dashboard</a>
+<a href="vault.html">📁 My Vault</a>
 <a href="account.html">💰 Secure Account Details</a>
+<a href="settings.html">⚙ Settings</a>
 <a href="index.html">🚪 Logout</a>
 
 </div>
@@ -127,33 +129,33 @@ button:hover{
 <div class="card">
 
 <div class="info">
-<span class="label">Customer Name</span>
-<span class="value" id="name">Loading...</span>
+<span class="label">First Name</span>
+<span class="value" id="name">DIANA</span>
 </div>
 
 <div class="info">
-<span class="label">Bank Name</span>
-<span class="value">ABC National Bank</span>
+<span class="label">Last Name</span>
+<span class="value">ZMOCHINA</span>
 </div>
 
 <div class="info">
 <span class="label">Account Number</span>
-<span class="value" id="account">XXXXXXXX1234</span>
+<span class="value" id="account">XXXXXXXXXX5581</span>
 </div>
 
 <div class="info">
-<span class="label">IFSC Code</span>
-<span class="value">ABCD0001234</span>
+<span class="label">Routing Number</span>
+<span class="value">021000021</span>
 </div>
 
 <div class="info">
-<span class="label">Branch</span>
-<span class="value">BANK OF AMERICA</span>
+<span class="label">Name of Bank</span>
+<span class="value">JP Morgan Chase</span>
 </div>
 
 <div class="info">
-<span class="label">UPI ID</span>
-<span class="value">customer@abcbank</span>
+<span class="label">ADDRESS</span>
+<span class="value">4 Chase Metrotech CTR,</span>
 </div>
 
 <div class="info">
@@ -171,7 +173,14 @@ Show / Hide Account Number
 </button>
 
 <div class="warning">
-⚠ This page displays demo bank account information for educational purposes only.
+<div class="security-notice">
+    <h3>⚠ Secure Bank Account Information</h3>
+    <p>
+        This page contains confidential bank account information intended for
+        authorized users only. Please ensure that all details are handled
+        securely and accessed only by individuals with appropriate authorization.
+    </p>
+</div>
 </div>
 
 </div>
@@ -194,11 +203,11 @@ document.getElementById("account");
 
 if(visible){
 
-account.innerHTML="XXXXXXXX1234";
+account.innerHTML="XXXXXXXXXX5581";
 
 }else{
 
-account.innerHTML="12345678901234";
+account.innerHTML="30000002945581";
 
 }
 
